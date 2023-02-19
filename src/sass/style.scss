@@ -1,12 +1,27 @@
-@import "reset_style.scss";
-@import "base/func";
-@import "fonts/font";
+.item{
+    display: inline-block;
+    padding: 12px;
+    border: 1px solid #ccc;
+    &__title{
+        color: aquamarine;
+    }
+    &__text{
+        color: rgb(255, 128, 0);
+    }
+}
 
-
-@import "../css/bootstrap.min.css";
-//@import "libs/slick-theme.scss";
-@import "libs/slick.scss";
-
-@import "components/header";
-@import "components/footer";
+form{
+    display: flex;
+    flex-direction: column;
+    input, textarea, button{
+        margin: 12px 0;
+        max-width: 300px;
+    }
+    #content{
+        display: none;
+    }
+    #content.show{
+        display: block;
+    }
+}
 

@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TEMPLATE</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TEMPLATE</title>
 
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
 
-<body>
-    @@include("components/_header.html")
+    <body>
+        @@include("components/_header.html")
+        <section class="form mb-3">
+            <form>
+                <input type="text" id="title" placeholder="Title">
+                <input type="text" id="description" placeholder="Description">
+                <input type="number" id="price" placeholder="Price">
+                <textarea id="content" placeholder="Content"></textarea>
+                <input onclick="showTextArea()" type="checkbox"
+                    id="show_textarea" name="show_textarea">
+                <button type="submit" onclick="addPost(event)">Add post</button>
+            </form>
+        </section>
+        <section id="posts_list"></section>
+        <form>
+            <input type="number" name="filter_price" id="filter_price" required/>
+            <button onclick="filterPostsByPrice(event)">Filter</button>
+        </form>
 
-    @@include("pages/page-template.html")
+        @@include("components/_footer.html")
 
-    @@include("components/_footer.html")
-    @@include("icons/_icons.html")
-    
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript"
+            src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 
 </html>
