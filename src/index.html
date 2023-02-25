@@ -5,36 +5,92 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TEMPLATE</title>
-
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <style>
+                .some__el {
+                    border: 1px solid red;
+                    height: 100px;
+                }
+            </style>
         <link rel="stylesheet" href="css/style.min.css">
     </head>
 
     <body>
         @@include("components/_header.html")
-        <section class="form mb-3">
-            <form>
-                <input type="text" id="title" placeholder="Title">
-                <input type="text" id="description" placeholder="Description">
-                <input type="number" id="price" placeholder="Price">
-                <textarea id="content" placeholder="Content"></textarea>
-                <input onclick="showTextArea()" type="checkbox"
-                    id="show_textarea" name="show_textarea">
-                <button type="submit" onclick="addPost(event)">Add post</button>
-            </form>
-        </section>
-        <section id="posts_list"></section>
-        <form>
-            <input type="number" name="filter_price" id="filter_price" required/>
-            <button onclick="filterPostsByPrice(event)">Filter</button>
-        </form>
 
-        @@include("components/_footer.html")
+        <div class="container">
+            <div class="row">
+                <div class="order-3 order-lg-2 mb-4 mb-lg-0 col-12 col-md-6
+                    col-lg-3">
+                    <div class="some__el d-flex justify-content-center
+                        align-items-center">
+                        test - 2
+                    </div>
+                </div>
+                <div class="order-2 order-lg-3 mb-4 mb-lg-0 col-12 col-md-6
+                    col-lg-3">
+                    <div class="some__el">
+                        test - 1
+                    </div>
+                </div>
+                <div class="order-4 mb-4 mb-lg-0 col-12 col-md-6 col-lg-3">
+                    <div class="some__el">
+                        test
+                    </div>
+                </div>
+                <div class="order-4 mb-4 mb-lg-0 col-12 col-md-12 col-lg-3">
+                    <div class="some__el">
+                        test
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+        <footer>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal
+                                title</h5>
+                            <button type="button" class="btn-close"
+                                data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save
+                                changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
         <script type="text/javascript"
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
         <script src="js/script.js"></script>
     </body>
 
