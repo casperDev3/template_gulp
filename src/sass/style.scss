@@ -157,3 +157,19 @@ form {
         transform: translateY(0);
     }
 }
+
+.tabs{
+    display: flex;
+    &__item{
+        font-size: 12px;
+        margin: 12px;
+        padding: 12px;
+        background-color: #ccc;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+    .selected{
+        background-color: lightcoral;
+        border: 1px solid lightcoral;
+    }
+}

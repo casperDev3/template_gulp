@@ -80,54 +80,40 @@
             <button onclick="filterPostsByPrice(event)">Filter</button>
         </form>
 
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            explicabo blanditiis vel voluptate optio eaque dicta praesentium
-            deleniti aperiam in culpa minima soluta impedit, illo,
-            necessitatibus, quisquam sit cumque illum.
-        </div>
+        <section class="tabs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex">
+                        <div class="tabs__item selected" data-id="all_products" data-products="1">Всі</div>
+                        <div class="tabs__item" data-id="electronics" data-products="2">Електроніка</div>
+                        <div class="tabs__item" data-id="fruits"  data-products="3">Зернові</div>
+                    </div>
+                    <div class="tabs__sort mb-2">
+                        <div id="abs" class="btn btn-success me-4 ms-2">ABS</div>
+                        <div class="btn btn-danger">DESC</div>
+                    </div>
+                    <div class="col-12">
+                        <div class="tabs__content" data-products="1">
+                            <div id="all_products">
+
+                            </div>
+                        </div>
+                        <div class="tabs__content d-none" data-products="2">
+                            <div id="electronics">
+
+                            </div>
+                        </div>
+                        <div class="tabs__content d-none" data-products="3">
+                            <div id="fruits">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <div id="targetText">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
             explicabo blanditiis vel voluptate optio eaque dicta praesentium
