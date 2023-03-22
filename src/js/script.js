@@ -1,103 +1,85 @@
-let POSTS = [
+const DATA = [
   {
-    id: 1,
-    title: 'Post 1',
-    body: 'Post 1 body',
-    price: 300,
-    comments: [
-      'Comment 1', 'Comment 2', 'Comment 3'
-    ]
+    name: "John Doe",
+    age: 30,
+    city: "New York",
   },
   {
-    id: 2,
-    title: 'Post 2',
-    body: 'Post 2 body',
-    price: 400,
-    comments: [
-      'Comment 1', 'Comment 2', 'Comment 3'
-    ]
+    name: "Jane Doe",
+    age: 25,
+    city: "Boston",
   },
   {
-    id: 3,
-    title: 'Post 3',
-    body: 'Post 3 body',
-    price: 500,
-    comments: [
-      'Comment 1', 'Comment 2', 'Comment 3'
-    ]
+    name: "John Smith",
+    age: 17,
+    city: "Miami",
+  },
+];
+
+// const drawSomeElements = () => {
+//   // 1.  Create a new element
+//   let html = "";
+//   // 2.  Add some content to the element
+//   DATA.forEach((item) => {
+//     html += `<li>${item.name} is ${item.age} years old and lives in ${item.city}</li>`;
+//   });
+//   // 3. Add the element to the DOM
+//   html = `<ul>${html}</ul>`;
+//   document.querySelector(".test__items").innerHTML = html;
+// };
+
+class Users {
+  #adultAge = 21;
+  constructor(data) {
+    this.data = data;
   }
-]
-
-function showPostsOnPage(posts) {
-  // 1. Forming the HTML for the post
-  let html = '';
-  posts.forEach((post) => {
-    html += `
-    <div id="${post.id}" class="item">
-      <h2 class="item__title">${post.title}</h2>
-      <p class="item__price">${post.price}</p>
-      <p class="item__text">${post.body}</p>
-    </div>`
-  })
-  // 2. Inserting the HTML into the DOM
-  const TARGET = document.querySelector('#posts_list');
-  TARGET.innerHTML = html;
-}
-function addPost(e) {
-  e.preventDefault();
-  // 1. Getting the data from the form
-  const TITLE = document.getElementById('title').value
-  const BODY = document.getElementById('description').value
-  const PRICE = document.getElementById('price').value
-  // 2. Forming the post object
-  const POST = {
-    id: POSTS.length + 1,
-    title: TITLE,
-    body: BODY,
-    price: PRICE,
-    comments: []
-  }
-  // 3. Adding the post to the array
-  POSTS.push(POST)
-  // 4. Showing the posts on the page
-  showPostsOnPage()
-  // 5. Clearing the form
-  const FORM = document.querySelector('form');
-  FORM.reset();
-}
-
-function showTextArea() {
-  // 1. Getting checkbox checked status
-  const CHECKBOX = document.getElementById('show_textarea');
-  const CHECKED = CHECKBOX.checked;
-  const TEXTAREA = document.getElementById('content');
-  console.log(CHECKED);
-
-  // if(CHECKED){
-  //   TEXTAREA.classList.add('show');
-  // }else{
-  //   TEXTAREA.classList.remove('show');
-  // }
-  CHECKED ? TEXTAREA.classList.add('show') : TEXTAREA.classList.remove('show');
-}
-
-function filterPostsByPrice(e) {
-  e.preventDefault();
-  function filter() {
-    const FILTERED_POSTS = POSTS.filter((post) => {
-      return post.price >= MIN_PRICE;
+  drawSomeElements() {
+    // 1.  Create a new element
+    let html = "";
+    // 2.  Add some content to the element
+    this.data.forEach((item) => {
+      html += `<li>${item.name} is ${item.age} years old and lives in ${item.city}</li>`;
     });
-    showPostsOnPage(FILTERED_POSTS);
+    // 3. Add the element to the DOM
+    html = `<ul>${html}</ul>`;
+    document.querySelector(".test__items").innerHTML = html;
   }
-  function displayNotificationUser() {
-    alert('Please input price!');
+  calcAdultAndChild() {
+    let adult = 0;
+    let child = 0;
+    this.data.map((item) => {
+      item.age >= 18 ? adult++ : child++;
+    });
+    return { adult, child };
   }
-  const MIN_PRICE = document.getElementById('filter_price').value;
-  MIN_PRICE.length == 0 || Number(MIN_PRICE) <= 0 ? displayNotificationUser() : filter();
+  get adultBaseAge() {
+    return this.#adultAge;
+  }
+  set addAdulttBaseAge(age) {
+    this.#adultAge = age;
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  showPostsOnPage(POSTS);
-})
+class Chlid extends Users {
+  constructor(data, quintity_group) {
+    super(data);
+    this.quintity_group = quintity_group;
+  }
+  checkFreePlaces() {
+    const CHILD = this.data.filter((item) => item.age < this.adultBaseAge);
+    if (CHILD.length < this.quintity_group) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
 
-
+// 1. Start point of the application
+document.addEventListener("DOMContentLoaded", () => {
+  //   drawSomeElements();
+  let user = new Users(DATA);
+  let child = new Chlid(DATA, 10);
+  console.log(child.adultBaseAge);
+  console.log(child.checkFreePlaces());
+});

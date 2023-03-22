@@ -11,6 +11,7 @@
 
     <body>
         @@include("components/_header.html")
+        <div class="test__items"></div>
         <section class="form mb-3">
             <form>
                 <input type="text" id="title" placeholder="Title">
@@ -24,7 +25,8 @@
         </section>
         <section id="posts_list"></section>
         <form>
-            <input type="number" name="filter_price" id="filter_price" required/>
+            <input type="number" name="filter_price" id="filter_price"
+                required/>
             <button onclick="filterPostsByPrice(event)">Filter</button>
         </form>
 
